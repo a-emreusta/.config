@@ -10,7 +10,7 @@
 # Whether to hide the average cpu entry.
 #hide_avg_cpu = false
 # Whether to use dot markers rather than braille.
-#dot_marker = false
+dot_marker = true
 # The update rate of the application.
 #rate = 1000
 # Whether to put the CPU legend to the left.
@@ -52,15 +52,15 @@
 # Remove space in tables
 #hide_table_gap = false
 # Show the battery widgets
-#battery = false
+battery = true
 # Disable mouse clicks
 #disable_click = false
 # Built-in themes.  Valid values are "default", "default-light", "gruvbox", "gruvbox-light", "nord", "nord-light"
-#color = "default"
+color = "nord"
 # Show memory values in the processes widget as values by default
 #mem_as_value = false
 # Show tree mode by default in the processes widget.
-#tree = false
+tree = true
 # Shows an indicator in table widgets tracking where in the list you are.
 #show_table_scroll_position = false
 # Show processes as their commands by default in the process widget.
@@ -150,6 +150,33 @@
 #    type="proc"
 #    default=true
 
+[[row]]
+  ratio=30
+  [[row.child]]
+    ratio=70
+    type="cpu"
+  [[row.child]]
+    ratio=30
+    type="battery"
+[[row]]
+  ratio=80
+  [[row.child]]
+    ratio=40
+    [[row.child.child]]
+      ratio=20
+      type="temp"
+    [[row.child.child]]
+      ratio=30
+      type="mem"
+    [[row.child.child]]
+      ratio=30
+      type="net"
+    [[row.child.child]]
+      ratio=20
+      type="disk"
+  [[row.child]]
+    ratio=60
+    type="proc"
 
 # Filters - you can hide specific temperature sensors, network interfaces, and disks using filters.  This is admittedly
 # a bit hard to use as of now, and there is a planned in-app interface for managing this in the future:
